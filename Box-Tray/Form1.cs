@@ -50,7 +50,6 @@ namespace Box_Tray
                     }
 
                     DisplayLabelImage();
-
                     if (textBoxTray.Focused)
                     {
                         textBoxTray.BackColor = Color.Yellow;
@@ -165,8 +164,8 @@ namespace Box_Tray
         {
             if (textBoxBox.Text.Trim().Length > 0 & textBoxTray.Text.Trim().Length > 0) 
             {
-                string boxCode = textBoxBox.Text.Substring(1, textBoxBox.Text.Length - 2);
-                string trayCode = textBoxTray.Text.Substring(1, textBoxTray.Text.Length - 2);
+                string boxCode = textBoxBox.Text.Substring(1, textBoxBox.Text.Length - 1);
+                string trayCode = textBoxTray.Text.Substring(1, textBoxTray.Text.Length - 1);
 
                 if (boxCode==trayCode)
                 {
@@ -174,7 +173,6 @@ namespace Box_Tray
                 }
                 else
                 {
-
                     string error = "BŁĄD!" + Environment.NewLine + "Tray: " + textBoxTray.Text + Environment.NewLine + "Karton: " + textBoxBox.Text;
                     ShowResult(error, Color.Red);
                 }
